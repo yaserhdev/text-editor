@@ -14,16 +14,44 @@ module.exports = () => {
       install: './src/js/install.js'
     },
     output: {
-      filename: '[name].bundle.js',
+      filename: 'bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+      // HTML Webpack Plugin
+      new HtmlWebpackPlugin({
+        template: './index.html',
+        title: 'Webpack Plugin'
+      }),
+      // Webpack PWA Manifest
+      new WebpackPwaManifest(),
+      // Inject Manifest
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'service-worker.js'
+      })
     ],
 
     module: {
       rules: [
-        
+        // Rules for CSS loaders
+        {
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader']
+        },
+        // Rules for babel loader
+        {
+          test: /\.(?:js|mjs|cjs)$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                ['@babel/preset-env', {targets: "defaults" }]
+              ]
+            }
+          }
+        }
       ],
     },
   };
