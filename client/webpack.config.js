@@ -29,8 +29,8 @@ module.exports = () => {
         name: 'Just Another Text Editor',
         short_name: 'JATE',
         description: 'JATE is a progressive web application that serves as a text editor.',
-        background_color: '#000000',
-        theme_color: '#000000',
+        background_color: '#595957',
+        theme_color: '#595957',
         start_url: './',
         publicPath: './',
         icons: [
