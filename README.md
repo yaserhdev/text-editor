@@ -9,6 +9,10 @@ To install this application, download the repository files and open the root fol
 ```
 npm i
 ```
+Then run the application using:
+```
+npm start
+```
 
 
 ## User Story
