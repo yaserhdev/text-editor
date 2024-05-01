@@ -52,8 +52,8 @@ THEN I should have proper build scripts for a webpack application
 ```
 
 
-![Screenshot of deployed application] ()
-
 Application available for download at: https://github.com/yaserhdev/text-editor
 
-Live application: 
+Live application: https://jate-4qtp.onrender.com/ 
+
+![Screenshot of deployed application](assets/images/text-editor-screenshot.png)
